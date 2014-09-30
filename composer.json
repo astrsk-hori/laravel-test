@@ -6,6 +6,7 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
+    "y-yamagata/psysh-laravel": "0.1.*",
     "twitter/bootstrap": "*"
 	},
 	"autoload": {
