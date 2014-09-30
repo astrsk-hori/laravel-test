@@ -18,25 +18,6 @@ app/config/local/database.php
 composer install
 ```
 
-```
-bootstrap/start.php
-```
-
-上記にローカル環境の設定を行う
-
-```
-まずローカルのホスト名を調べる
-
-$ hostname
-
-上記コマンド結果をstart.phpの29行目に加える
-
-$env = $app->detectEnvironment(array(
-'local' => array('homestead', 'hoge-hostname'),
-
-));
-```
-
 * migration & seed
 
 ```

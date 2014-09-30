@@ -24,11 +24,18 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
+//$env = $app->detectEnvironment(array(
+//
+//	'local' => array('homestead', 'PC-8462'),
+//
+//));
+$env = $app->detectEnvironment(function(){
+  if (getenv('LARAVEL_ENV')) {
+    return getenv('LARAVEL_ENV');
+  }
 
-	'local' => array('homestead', 'PC-8462'),
-
-));
+  return 'local';
+});
 
 /*
 |--------------------------------------------------------------------------
