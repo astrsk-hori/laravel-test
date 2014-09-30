@@ -15,6 +15,10 @@ app/config/local/database.php
 上記に合わせてDBを作成
 
 ```
+composer install
+```
+
+```
 bootstrap/start.php
 ```
 
