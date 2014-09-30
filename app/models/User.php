@@ -15,6 +15,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
+  protected $guarded = array('id');
+
+  public function tags()
+  {
+    return $this->belongsToMany('Tag', 'user_tag_relations');
+  }
 
 	/**
 	 * The attributes excluded from the model's JSON form.

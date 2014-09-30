@@ -15,3 +15,14 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+Route::resource('users', 'UserController');
+
+Route::get('tags', function()
+{
+  return Response::json(Tag::all());
+});
+Route::get('tags/create', function()
+{
+  $tag = Input::get('name');
+	return Tag::create(array('name' => $tag));
+});
