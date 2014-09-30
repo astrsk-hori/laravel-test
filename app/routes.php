@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+  return View::make('hello');
 });
 Route::resource('users', 'UserController');
 
@@ -26,8 +26,7 @@ Route::get('user_add_tag', function()
   $user = User::find($id);
   $tag = new Tag(array('name' => $name));
 
-
-	return $user->tags()->save($tag);
+  return $user->tags()->save($tag);
 });
 
 Route::get('tags', function()
@@ -38,7 +37,7 @@ Route::get('tags', function()
 Route::get('tags/create', function()
 {
   $tag = Input::get('name');
-	return Tag::create(array('name' => $tag));
+  return Tag::create(array('name' => $tag));
 });
 
 // 関連テーブルのみの参照
