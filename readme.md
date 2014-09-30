@@ -38,3 +38,21 @@ app/routes.php
 ```
 上記を見ながらアクセスする
 
+## laravelを対話式で使う
+
+```
+php artisan psysh
+```
+
+上記コマンド実行でlaravelのmodelなどがコマンド実行可能になる
+
+```
+ᐅ php artisan psysh
+Psy Shell v0.1.12 (PHP 5.5.17 — cli) by Justin Hileman
+>>> User::find(1);
+=> <User #00000000242b99eb000000013f42a3cf> {
+       id: 1,
+       name: "hoge",
+       ema
+}
+```
