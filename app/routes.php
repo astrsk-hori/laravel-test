@@ -32,10 +32,20 @@ Route::get('user_add_tag', function()
 
 Route::get('tags', function()
 {
-  return Response::json(Tag::all());
+  //return Response::json(Tag::all());
+  return Tag::all()->toJson();
 });
 Route::get('tags/create', function()
 {
   $tag = Input::get('name');
 	return Tag::create(array('name' => $tag));
+});
+
+// 関連テーブルのみの参照
+// http://localhost:8000/user_tag_relations?id=1
+Route::get('user_tag_relations', function()
+{
+  $id = Input::get('id');
+  $user = User::with('tags')->find($id);
+  return Response::json($user->tags[0]->pivot);
 });
