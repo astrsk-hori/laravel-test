@@ -17,6 +17,19 @@ Route::get('/', function()
 });
 Route::resource('users', 'UserController');
 
+// http://localhost:8000/users/add_tag?id=1&name=hoge
+Route::get('user_add_tag', function()
+{
+  $id = Input::get('id');
+  $name = Input::get('name');
+
+  $user = User::find($id);
+  $tag = new Tag(array('name' => $name));
+
+
+	return $user->tags()->save($tag);
+});
+
 Route::get('tags', function()
 {
   return Response::json(Tag::all());
