@@ -48,3 +48,6 @@ Route::get('user_tag_relations', function()
   $user = User::with('tags')->find($id);
   return Response::json($user->tags[0]->pivot);
 });
+
+
+Route::resource('posts', 'PostsController');

@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder {
     $this->call('UserTableSeeder');
 
     $this->command->info('User table seeded!');
-  }
+  	$this->call('PostsTableSeeder');
+	}
 
 }
 
@@ -30,5 +31,6 @@ class UserTableSeeder extends Seeder {
         'email' => 'foo@bar.com'
       )
     );
-  }
+  	$this->call('PostsTableSeeder');
+	}
 }

@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
     'YYamagata\PsyshLaravel\PsyshLaravelServiceProvider',
+    'Dollar\Generators\GeneratorsServiceProvider',
 
 	),
 
